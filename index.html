@@ -3,12 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Shreyas Udupa Balekudru</title>
+<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script type="text/javascript" src="jquery.fullPage.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#fullpage').fullpage();
+  });
+</script>
 <style>
 #about {
-  padding-top: 7%;
   background-image: url("http://www.uksoftech.com/wp-content/uploads/2016/02/website-design-background.png");
   background-size: cover;
   color: white;
@@ -17,32 +23,36 @@
 #portfolio {
   background-image: url("http://www.uksoftech.com/wp-content/uploads/2016/02/website-design-background.png");
   background-size: cover;
+  padding: 20px;
 }
 
 #portfolio p {
   color: white;
   background-color: rgba(0,0,0,0.5);
-  padding: 10px;
+  padding: 20px;
 }
 
 #contact {
   background-image: url("http://www.uksoftech.com/wp-content/uploads/2016/02/website-design-background.png");
   background-size: cover;
   color: white;
+  padding: 20px;
 }
 
 #courses {
   background-image: url("http://www.uksoftech.com/wp-content/uploads/2016/02/website-design-background.png");
   background-size: cover;
   color: white;
+  padding: 20px;
 }
 
 #contact img {
   height: 50px;
 }
-#proj_img {
-  height : 400px;
-  width: 100%;
+.project-item {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 </style>
 </head>
@@ -65,7 +75,8 @@
     </div>
   </div>
 </nav>
-<div class="well" id="about">
+<div id="fullpage">
+<div class="section" id="about">
   <h1 class="text-center">Hello World!!</h1>
   <div class="row">
     <div class="col-xs-9">
@@ -76,37 +87,47 @@
       <h4 class="text-center">My hobbies - Football (soccer), Reading novels (preferably fiction), Watching movies and TV shows</h4>
     </div>
     <div class="col-xs-3">
-      <img class="img-responsive" src="photo.jpg" alt="my photo">
+      <img class="img-responsive" src="photo.jpg" alt="my photo" style="padding:20px;">
     </div>
   </div>
 </div>
-<div class="well" id="portfolio">
-  <div class="row">
-    <div class="col-xs-4">
-      <a href="https://todoapp-1.herokuapp.com/" target="_blank"><img class="img-responsive" src="todo_capture.png" alt="project" id="proj_img"></a>
-      <p>Django web application to keep track of things I still have to do. A work in progress.</p>
+<div class="section" id="portfolio">
+  <!--<div class="row">-->
+    <div class="slide">
+      <div class="project-item">
+        <a href="https://todoapp-1.herokuapp.com/" target="_blank"><img class="img-responsive" src="todo_capture.png" alt="project" id="proj_img"></a>
+        <p>Django web application to keep track of things I still have to do. A work in progress.</p>
+      </div>
     </div>
-    <div class="col-xs-4">
-      <img class="img-responsive" src="mp_capture.jpg" alt="project" id="proj_img">
-      <p>A voice interface for controlling hardware devices. I built an isolated word voice command recognition module that achieved 94.3% accuracy.</p>
+    <div class="slide">
+      <div class="project-item">
+        <img class="img-responsive" src="architecture.png" alt="project" id="proj_img">
+        <p>A voice interface for controlling hardware devices. I built an isolated word voice command recognition module that achieved 94.3% accuracy.</p>
+      </div>
     </div>
-    <div class="col-xs-4">
-      <img class="img-responsive" src="itinerant_capture.png" alt="project" id="proj_img">
-      <p>We went to CalHacks 3.0 at UC, Berkeley and built a personalized travel plan recommender web application. I learnt a bit of flask along the way.</p>
+    <div class="slide">
+      <div class="project-item">
+        <img class="img-responsive" src="itinerant_capture.png" alt="project" id="proj_img">
+        <p>We went to CalHacks 3.0 at UC, Berkeley and built a personalized travel plan recommender web application. I learnt a bit of flask along the way.</p>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-4">
-      <img class="img-responsive" src="incident_capture.png" alt="project" id="proj_img">
-      <p>We built a website for our college's cultural fest using ThreeJS (a JavaScript library for WebGL). The homepage was a 3D landscape where the user could use the mouse to navigate.</p>
+  <!--</div>-->
+  <!--<div class="row">-->
+    <div class="slide">
+      <div class="project-item">
+        <img class="img-responsive" src="incident_capture.png" alt="project" id="proj_img">
+        <p>We built a website for our college's cultural fest using ThreeJS (a JavaScript library for WebGL). The homepage was a 3D landscape where the user could use the mouse to navigate.</p>
+      </div>
     </div>
-    <div class="col-xs-4">
-      <a href="http://assignment-portal.appspot.com/" target="_blank"><img class="img-responsive" src="assignment_capture.png" alt="project" id="proj_img"></a>
-      <p>Built and deployed a web application on Google AppEngine using python, jinja templating for HTML and CSS, and Google's NoSQL database (Bigtable). Users could sign in as students to submit assignment files or instructors could sign in to grade and provide feedback.</p>
+    <div class="slide">
+      <div class="project-item">
+        <a href="http://assignment-portal.appspot.com/" target="_blank"><img class="img-responsive" src="assignment_capture.png" alt="project" id="proj_img"></a>
+        <p>Built and deployed a web application on Google AppEngine using python, jinja templating for HTML and CSS, and Google's NoSQL database (Bigtable). Users could sign in as students to submit assignment files or instructors could sign in to grade and provide feedback.</p>
+      </div>
     </div>
-  </div>
+  <!--</div>-->
 </div>
-<div class="well" id="courses">
+<div class="section" id="courses">
   <div class="row">
     <h3>Fall 2016</h3>
     <ul>
@@ -116,7 +137,7 @@
     </ul>
   </div>
 </div>
-<div class="well" id="contact">
+<div class="section" id="contact">
   <div class="row">
     <div class="col-xs-4">
       <h3>Email id - sudupaba@eng.ucsd.edu</h3>
@@ -138,6 +159,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 </body>
 </html>
